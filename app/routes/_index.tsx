@@ -1,4 +1,5 @@
 import type { V2_MetaFunction } from "@remix-run/node";
+import { env } from "~/env";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -10,7 +11,7 @@ export const meta: V2_MetaFunction = () => {
 export default function Index() {
   return (
     <div>
-      <h1>Welcome to Remix</h1>
+      <h1>Welcome to Remix: {JSON.stringify(env)}</h1>
     </div>
   );
 }

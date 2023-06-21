@@ -1,4 +1,5 @@
 /** @type {import('@remix-run/dev').AppConfig} */
+
 module.exports = {
   ignoredRouteFiles: ["**/.*"],
   // appDirectory: "app",
@@ -13,5 +14,5 @@ module.exports = {
     v2_normalizeFormMethod: true,
     v2_routeConvention: true,
   },
-  tailwind: true
+  tailwind: true,
 };
