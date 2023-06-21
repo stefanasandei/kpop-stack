@@ -1,17 +1,25 @@
 import type { V2_MetaFunction } from "@remix-run/node";
-import { env } from "~/env";
+import { useLoaderData } from "@remix-run/react";
+import { getDB } from "~/lib/db";
+import { songs } from "~/lib/schema";
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "KPop Remix" },
+    { name: "description", content: "A Remix template project." },
   ];
 };
 
+export const loader = async () => {
+  const db = await getDB()!;
+  return await db.select().from(songs);
+};
+
 export default function Index() {
+  const data = useLoaderData<typeof loader>();
   return (
-    <div>
-      <h1>Welcome to Remix: {JSON.stringify(env)}</h1>
+    <div className="bg-zinc-900 text-pink-300 text-2xl min-h-screen p-2">
+      <h1>Songs in the database: {JSON.stringify(data)}</h1>
     </div>
   );
 }
