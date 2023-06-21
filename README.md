@@ -1,10 +1,11 @@
 # Remix KPop Template
 
-This is an oppiniated template, it uses:
+This is an opinionated template, it uses:
  - Remix
  - Drizzle
  - T3 Env
  - Tailwind
+ - Cypress
 
  ## How to use
 
