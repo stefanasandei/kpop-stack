@@ -1,7 +1,7 @@
 import type { V2_MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { getDB } from "~/lib/db";
-import { songs } from "~/lib/schema";
+import { getDB } from "~/lib/db.server";
+import { songs } from "~/lib/schema..server";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -11,7 +11,7 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export const loader = async () => {
-  const db = await getDB()!;
+  const db = await getDB();
   return await db.select().from(songs);
 };
 

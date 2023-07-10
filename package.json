@@ -4,10 +4,10 @@
   "scripts": {
     "build": "remix build",
     "dev": "remix dev",
-    "start": "remix-serve build",
-    "typecheck": "tsc",
     "migrate": "drizzle-kit generate:pg",
-    "test-ui": "cypress open"
+    "start": "remix-serve build",
+    "test-ui": "cypress open",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@remix-run/css-bundle": "^1.17.1",
@@ -17,6 +17,7 @@
     "@t3-oss/env-core": "^0.4.1",
     "drizzle-orm": "^0.27.0",
     "isbot": "^3.6.8",
+    "pg": "^8.11.1",
     "postgres": "^3.3.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -28,7 +29,7 @@
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
     "cypress": "^12.15.0",
-    "drizzle-kit": "^0.19.2",
+    "drizzle-kit": "^0.19.3",
     "eslint": "^8.38.0",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.4"
